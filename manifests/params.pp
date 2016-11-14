@@ -16,6 +16,7 @@ class authconfig::params () {
     default => ['oddjob-mkhomedir']
   }
   $nis_packages       = ['ypbind']
+  $winbind_packages   = ['samba-common-tools']
   $nis_services       = ['ypbind']
   $services           = []
   $cache_services     = ['nscd']

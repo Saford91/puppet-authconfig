@@ -332,6 +332,11 @@ class authconfig (
 
       # Winbind
       if $winbind {
+        # Install packages required for winbind to work
+        package { $authconfig::params::winbind_packages:
+          ensure => installed,
+        }
+
         #smbrealm= Active directory domain (e.g. yourcompany.com)
         if !$smbrealm {
           fail('The smbrealm parameter is required when winbind is set to true')
